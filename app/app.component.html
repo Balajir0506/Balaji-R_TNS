@@ -1,0 +1,100 @@
+<body>
+  <div class="container">
+    <div class="form-container">
+      <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+        <h4 class="display-6 text-center py-2">Student Database</h4>
+  
+        <div class="input-container">
+          <label for="name">Name</label>
+          <input id="name" required #name="ngModel" ngModel name="name" type="text" class="form-control" placeholder="Enter your name">
+        </div>
+  
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input id="email" required #email="ngModel" ngModel name="email" type="email" class="form-control" placeholder="Enter your email">
+        </div>
+  
+        <div class="input-container">
+          <label for="degree">Degree</label>
+          <input id="degree" required #degree="ngModel" ngModel name="degree" type="text" class="form-control" placeholder="Enter Degree">
+        </div>
+  
+        <div class="input-container">
+          <label for="graduationYear">Graduation Year</label>
+          <input id="graduationYear" required #graduationYear="ngModel" ngModel name="graduationYear" type="number" class="form-control" placeholder="Enter Graduation Year">
+        </div>
+  
+        <div class="form-group text-center">
+          <input class="btn btn-gradient" type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+  
+    <div class="table-container mt-5">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Degree</th>
+            <th>Graduation Year</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of studentDetails">
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.degree}}</td>
+            <td>{{student.graduationYear}}</td>
+            <td><button type="button" class="btn btn-edit" (click)="edit(student)">Edit</button></td>
+            <td><button type="button" class="btn btn-delete" (click)="deleteStudent(student)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Update Modal -->
+   <!-- Modal for Editing Student -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Student</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updateStudent()">
+          <h4 class="display-6 text-center py-2">Update Student</h4>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" class="form-control" [(ngModel)]="studentToUpdate.name" name="name" required>
+          </div><br>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" class="form-control" [(ngModel)]="studentToUpdate.email" name="email" required>
+          </div><br>
+
+          <div class="form-group">
+            <label for="degree">Degree</label>
+            <input id="degree" type="text" class="form-control" [(ngModel)]="studentToUpdate.degree" name="degree" required>
+          </div><br>
+
+          <div class="form-group">
+            <label for="graduationYear">Graduation Year</label>
+            <input id="graduationYear" type="number" class="form-control" [(ngModel)]="studentToUpdate.graduationYear" name="graduationYear" required>
+          </div><br>
+
+          <div class="form-group text-center">
+            <input class="btn btn-primary" type="submit" value="Update">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

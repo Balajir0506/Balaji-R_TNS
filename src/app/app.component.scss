@@ -1,0 +1,102 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding-top: 50px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.form-container {
+  width: 50%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  margin-top: 30px;
+  width: 75%;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.input-container label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.form-group .btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Button styles */
+.btn-gradient {
+  background: linear-gradient(45deg, #f39c12, #e74c3c);
+}
+
+.btn-edit {
+  background-color: #ef5757;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #36ea87;
+  color: white;
+}
+
+.modal-content {
+  padding: 30px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Custom modal size */
+.modal-dialog {
+  max-width: 600px;
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+.modal-body .input-container input {
+  padding: 12px;
+}
